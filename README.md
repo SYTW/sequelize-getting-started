@@ -1,3 +1,8 @@
+Sequelize is a promise-based ORM for Node.js and io.js. 
+It supports the dialects PostgreSQL, MySQL, MariaDB, SQLite and
+MSSQL and features solid transaction support, relations, read
+replication and more.
+
 This code corresponds to the tutorial at
 
 * Latest [This article explains the basic concepts of Sequelize](http://docs.sequelizejs.com/en/latest/docs/getting-started/). 
@@ -5,7 +10,9 @@ This code corresponds to the tutorial at
 
 * Information about the [Sequelize class](http://sequelize.readthedocs.org/en/latest/api/sequelize/ )
 
-You will learn how to use the supported dialects, which ways of database setup approaches are available and how common scenarios can be achieved.
+You will learn how to use the supported dialects, which ways of
+database setup approaches are available and how common scenarios
+can be achieved.
 
 Sequelize supports two way of schema management. You can either
 define so called migrations, which are programmatically changing
