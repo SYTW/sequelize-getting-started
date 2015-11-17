@@ -25,3 +25,17 @@ The hashed password will be in the format algorithm$salt$hash.
 var hashedPassword = passwordHash.generate('password123');
 
 console.log(hashedPassword); // sha1$3I7HRwy7$cbfdac6008f9cab4083784cbd1874f76618d2a97
+
+/*
+verify(password, hashedPassword)
+Compares a plain-text password (password) to a hashed password (hashedPassword) and returns a boolean. Both arguments are required.
+*/
+
+console.log(passwordHash.verify('password123', hashedPassword)); // true
+console.log(passwordHash.verify('Password0', hashedPassword));   // false
+/*
+isHashed(password)
+Check if a password (password) is hashed. Returns a boolean.
+*/
+console.log(passwordHash.isHashed('password123'));  // false
+console.log(passwordHash.isHashed(hashedPassword)); // true
