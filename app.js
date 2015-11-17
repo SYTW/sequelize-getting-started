@@ -20,28 +20,37 @@ var Sequelize = require('sequelize');
 
 // See http://sequelize.readthedocs.org/en/latest/api/sequelize/ for
 // information about the Sequelize class
-var sequelize = new Sequelize(
-    'database_name',  
-    'username', 
-    'password', 
-    { dialect: "sqlite" ,
-      /*
-      dialect: 'mysql'|'mariadb'|'sqlite'|'postgres'|'mssql',
-      host: 'localhost',
-      pool: {
-        max: 5,
-        min: 0,
-        idle: 10000
-      },
-      */
-      // SQLite only
-      storage: 'database.sqlite'
-    }
-);
-
+// var sequelize = new Sequelize(
+//     'database_name',  
+//     'username', 
+//     'password', 
+//     { dialect: "sqlite" ,
+//       /*
+//       dialect: 'mysql'|'mariadb'|'sqlite'|'postgres'|'mssql',
+//       host: 'localhost',
+//       pool: {
+//         max: 5, // maxConnections
+//         min: 0, // minConnections
+//         idle: 10000 // maxIdleTime
+//       },
+//       */
+//       // Only used by sqlite. Defaults to ':memory:'
+//       storage: 'database.sqlite'
+//     }
+// );
+/*
+    A connection pool is a cache of database
+    connections maintained so that the connections can be reused when
+    future requests to the database are required. 
+    Connection pools are used to enhance the performance of executing
+    commands on a database.
+*/
 /* Or much better:
   var sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname');
+  That for Sqlite (no user, no pass, no host, no port) reduces to:
 */
+var sequelize = new Sequelize('sqlite://:s@:/', { storage: 'database.sqlite'});
+
 var User = sequelize.define('User', {
   username: Sequelize.STRING,
   password: Sequelize.STRING
