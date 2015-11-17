@@ -18,12 +18,13 @@ Errors are thrown if:
 *  password is not a string
 *  options.algorithm is specified but not a valid cryptographic algorithm
 *  options.saltLength is specified but not a positive integer
-The hashed password will be in the format algorithm$salt$hash.
 
 */
 
 var hashedPassword = passwordHash.generate('password123');
 
+// The hashed password will be in the format 
+//                         algorithm$  salt  $hash
 console.log(hashedPassword); // sha1$3I7HRwy7$cbfdac6008f9cab4083784cbd1874f76618d2a97
 
 /*
